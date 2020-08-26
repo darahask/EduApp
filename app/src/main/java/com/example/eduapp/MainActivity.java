@@ -10,11 +10,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        System.out.println("Hello");
-        System.out.println("Hai");
-        System.out.println("This is our edu app");
-        System.out.println("DArahas");
-        System.out.println("BHAVANA");
-        System.out.println("kopp");
+        // this is surya's message about the merge problem.
+
     }
 }
