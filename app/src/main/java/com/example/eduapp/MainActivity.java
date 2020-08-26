@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("Hai");
         System.out.println("This is our edu app");
         System.out.println("DArahas");
-        System.out.println("bhavana");
+        System.out.println("BHAVANA");
     }
 }
