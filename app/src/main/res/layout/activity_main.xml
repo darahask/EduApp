@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    tools:context="com.example.eduapp.MainActivity">
+    android:gravity="center">
 
     <Button
         android:layout_width="150dp"

@@ -35,21 +35,6 @@ public class LoginActivity<wordtoSpan> extends AppCompatActivity {
         emailID = (EditText) findViewById(R.id.login_email);
         password = (EditText) findViewById(R.id.login_password);
         login = (Button) findViewById(R.id.login);
-        FirebaseAuth.AuthStateListener asl = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser fbu;
-                fbu = fba.getCurrentUser();
-                if (fbu != null) {
-                    Toast.makeText(LoginActivity.this,"You are logged in",Toast.LENGTH_SHORT).show();
-                    Intent intent  = new Intent(LoginActivity.this,HomeActivity.class);
-                    startActivity(intent);
-                }
-                else{
-                    Toast.makeText(LoginActivity.this,"Please Login",Toast.LENGTH_SHORT).show();
-                }
-            }
-        };
 
         login.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -64,8 +49,8 @@ public class LoginActivity<wordtoSpan> extends AppCompatActivity {
                     password.setError("Please enter password");
                     password.requestFocus();
                 }
-                else if(email_id.isEmpty()&&pass_word.isEmpty()){
-                    Toast.makeText(LoginActivity.this,"Fields are empty!",Toast.LENGTH_SHORT);
+                else if(email_id.isEmpty() && pass_word.isEmpty()){
+                    Toast.makeText(LoginActivity.this,"Fields are empty!",Toast.LENGTH_SHORT).show();
                 }
                 else{
                     fba.signInWithEmailAndPassword(email_id,pass_word).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
