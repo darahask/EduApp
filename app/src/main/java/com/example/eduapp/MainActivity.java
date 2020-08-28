@@ -7,13 +7,22 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.eduapp.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
+
+    FirebaseAuth fba;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fba = FirebaseAuth.getInstance();
+        if(fba.getUid() != null){
+            Intent intent = new Intent(MainActivity.this,HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     public void openLoginPage(View view){

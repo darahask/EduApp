@@ -16,6 +16,27 @@
         android:textSize="48dp"
         android:layout_marginBottom="50dp"/>
 
+    <Spinner
+        android:id="@+id/class_select"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/register_name"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_txt_round"
+            android:inputType="text"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="24dp"
+            android:hint="Name"
+            android:textColorHint="@color/colorPrimary"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">

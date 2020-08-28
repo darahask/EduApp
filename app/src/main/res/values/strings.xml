@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">EduApp</string>
+    <string-array name="classes">
+        <item>Class-6</item>
+        <item>Class-7</item>
+        <item>Class-8</item>
+        <item>Class-9</item>
+        <item>Class-10</item>
+        <item>Class-11</item>
+        <item>Class-12</item>
+    </string-array>
 </resources>
