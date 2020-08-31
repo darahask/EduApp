@@ -118,7 +118,8 @@ public class CreateActivity extends AppCompatActivity implements AdapterView.OnI
                                 map.put("title",title.getText().toString());
                                 map.put("description",desc.getText().toString());
                                 map.put("imageurl",downloadUri.toString());
-                                ff.collection("Posts").document(fa.getUid()).set(map);
+                                map.put("userid",fa.getUid());
+                                ff.collection("Posts").add(map);
                                 Toast.makeText(CreateActivity.this,"Uploaded",Toast.LENGTH_SHORT).show();
                                 finish();
                             }
