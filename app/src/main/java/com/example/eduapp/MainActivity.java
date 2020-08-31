@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         if(fba.getUid() != null){
             Intent intent = new Intent(MainActivity.this,HomeActivity.class);
             startActivity(intent);
-            finish();
         }
     }
 
