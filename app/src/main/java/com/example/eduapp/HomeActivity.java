@@ -17,6 +17,7 @@ import android.view.View;
 import com.example.eduapp.R;
 import com.example.eduapp.posts.CreateActivity;
 import com.example.eduapp.posts.adapters.MyPagerAdapter;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -43,7 +44,6 @@ public class HomeActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("Articles");
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_ham);
 
         fab = findViewById(R.id.home_create_launcher);
