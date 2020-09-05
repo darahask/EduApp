@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".study_material.text_books.class6"></activity>
+        <activity android:name=".posts.AnswerActivity"></activity>
+        <activity android:name=".posts.PostActivity" />
+        <activity android:name=".study_material.text_books.class6" />
         <activity android:name=".study_material.text_books.class10" />
         <activity android:name=".study_material.text_books.class9" />
         <activity android:name=".study_material.text_books.class8" />
