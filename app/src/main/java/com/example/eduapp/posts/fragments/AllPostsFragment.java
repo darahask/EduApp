@@ -1,5 +1,6 @@
 package com.example.eduapp.posts.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -13,7 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.eduapp.R;
+import com.example.eduapp.posts.PostActivity;
 import com.example.eduapp.posts.adapters.MyRecyclerAdapter;
+import com.example.eduapp.posts.adapters.OnPostClickListener;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -24,7 +27,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class AllPostsFragment extends Fragment {
+public class AllPostsFragment extends Fragment implements OnPostClickListener {
 
     private ArrayList<HashMap<String,Object>> dataList;
     private RecyclerView recyclerView;
@@ -42,13 +45,13 @@ public class AllPostsFragment extends Fragment {
         ff = FirebaseFirestore.getInstance();
         startLoading();
 
-        recyclerView = view.findViewById(R.id.all_recycler);
+        recyclerView = view.findViewById(R.id.posts_recycler);
         recyclerView.setHasFixedSize(true);
 
         layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        mAdapter = new MyRecyclerAdapter(dataList);
+        mAdapter = new MyRecyclerAdapter(dataList,this);
         recyclerView.setAdapter(mAdapter);
 
         return view;
@@ -74,12 +77,13 @@ public class AllPostsFragment extends Fragment {
                             if (doc.get("class") != null) {
                                 map.put("class",doc.get("class"));
                             }
-                            if (doc.get("date") != null) {
-                                map.put("date",doc.get("date"));
-                            }
                             if (doc.get("imageurl") != null) {
                                 map.put("imageurl",doc.get("imageurl"));
                             }
+                            if (doc.get("time") != null) {
+                                map.put("date",doc.get("time"));
+                            }
+                            map.put("postid",doc.getId());
                             dataList.add(map);
                             mAdapter.notifyDataSetChanged();
                             break;
@@ -93,5 +97,12 @@ public class AllPostsFragment extends Fragment {
                 }
             }
         });
+    }
+
+    @Override
+    public void onPostClick(int position) {
+        Intent i = new Intent(getContext(), PostActivity.class);
+        i.putExtra("postid",(String) dataList.get(position).get("postid"));
+        startActivity(i);
     }
 }

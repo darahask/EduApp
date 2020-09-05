@@ -10,6 +10,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,15 +26,19 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.google.type.DateTime;
 
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.net.URI;
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -55,7 +60,7 @@ public class CreateActivity extends AppCompatActivity implements AdapterView.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
-        fs = FirebaseStorage.getInstance().getReference();
+        fs = FirebaseStorage.getInstance().getReference().child("Images");
         fa = FirebaseAuth.getInstance();
         title = findViewById(R.id.post_title);
         desc = findViewById(R.id.post_desc);
@@ -113,15 +118,31 @@ public class CreateActivity extends AppCompatActivity implements AdapterView.OnI
                                 title.setError("Required Field");
                                 title.requestFocus();
                             }else {
-                                Map<String,Object> map = new HashMap<>();
+                                final Map<String,Object> map = new HashMap<>();
                                 map.put("class",class_name);
                                 map.put("title",title.getText().toString());
                                 map.put("description",desc.getText().toString());
                                 map.put("imageurl",downloadUri.toString());
                                 map.put("userid",fa.getUid());
-                                ff.collection("Posts").add(map);
-                                Toast.makeText(CreateActivity.this,"Uploaded",Toast.LENGTH_SHORT).show();
-                                finish();
+                                DocumentReference docref = ff.collection("Users").document(fa.getUid());
+                                docref.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                        if (task.isSuccessful()) {
+                                            DocumentSnapshot doc = task.getResult();
+                                            if (doc.get("name") != null) {
+                                                map.put("name",doc.get("name"));
+                                            }
+                                            if (doc.get("class") != null) {
+                                                map.put("class",doc.get("class"));
+                                            }
+                                            map.put("time", System.currentTimeMillis());
+                                            ff.collection("Posts").add(map);
+                                            Toast.makeText(CreateActivity.this,"Uploaded",Toast.LENGTH_SHORT).show();
+                                            finish();
+                                        }
+                                    }
+                                });
                             }
                         } else {
                             Toast.makeText(CreateActivity.this,"Upload Failed",Toast.LENGTH_SHORT).show();
