@@ -73,7 +73,7 @@ public class HomeActivity extends AppCompatActivity {
                         //TODO intent here
                     case R.id.nav_tasks:
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        //TODO intent here
+                        startActivity(new Intent(getApplicationContext(), TaskActivity.class));
                         break;
                     case R.id.nav_quiz:
                         drawerLayout.closeDrawer(GravityCompat.START);

@@ -95,8 +95,8 @@
             android:background="?android:attr/selectableItemBackground"
             android:clickable="true"
             android:focusable="true"
-            android:onClick="openRegPage"
-            android:text="Register"
+            android:onClick="openLogPage"
+            android:text="Login"
             android:textColor="@color/colorPrimary" />
 
     </LinearLayout>
