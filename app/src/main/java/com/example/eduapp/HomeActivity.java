@@ -71,7 +71,7 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_tasks:
                         drawerLayout.closeDrawer(GravityCompat.START);
-                     //   startActivity(new Intent(getApplicationContext(), TaskActivity.class));
+                        startActivity(new Intent(getApplicationContext(), TaskActivity.class));
                         break;
                     case R.id.nav_quiz:
                         drawerLayout.closeDrawer(GravityCompat.START);

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,11 +33,11 @@ public class TaskActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_task);
 
         btnplus = findViewById(R.id.plusButton);
 
-        RecyclerView list = (RecyclerView) findViewById(R.id.list);
+        final RecyclerView list = findViewById(R.id.list);
         list.setLayoutManager(new LinearLayoutManager(this));
         list.setAdapter(taskAdapter);
 
@@ -48,7 +49,7 @@ public class TaskActivity extends AppCompatActivity {
             }
         });
 
-        ref = FirebaseDatabase.getInstance().getReference().child("tasks");
+        ref = FirebaseDatabase.getInstance().getReference().child("tasks").child(FirebaseAuth.getInstance().getUid());
         ref.addChildEventListener(new ChildEventListener(){
 
             @Override
@@ -59,10 +60,32 @@ public class TaskActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {}
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Task task = dataSnapshot.getValue(Task.class);
+                String task_key = task.task_key;
+                System.out.println(task.task_time);
+                for(int i = 0;i<taskList.size();i++){
+                    if(taskList.get(i).task_key.equalsIgnoreCase(task_key)){
+                        taskList.remove(i);
+                        taskList.add(task);
+                        break;
+                    }
+                }
+                taskAdapter.notifyDataSetChanged();
+            }
 
             @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {taskAdapter.notifyDataSetChanged();}
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+                Task task = dataSnapshot.getValue(Task.class);
+                String task_key = task.task_key;
+                for(int i = 0;i<taskList.size();i++){
+                    if(taskList.get(i).task_key.equalsIgnoreCase(task_key)){
+                        taskList.remove(i);
+                        break;
+                    }
+                }
+                taskAdapter.notifyDataSetChanged();
+            }
 
             @Override
             public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s){}

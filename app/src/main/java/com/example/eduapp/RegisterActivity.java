@@ -46,7 +46,6 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         password = (EditText) findViewById(R.id.register_password);
         signup = (Button) findViewById(R.id.register);
         name = findViewById(R.id.register_name);
-
         spinner = findViewById(R.id.class_select);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.classes,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

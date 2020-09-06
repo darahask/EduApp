@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -40,20 +41,22 @@ public class AddTaskActivity extends AppCompatActivity{
         Create_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ref = FirebaseDatabase.getInstance().getReference().child("tasks");
+                ref = FirebaseDatabase.getInstance().getReference().child("tasks").child(FirebaseAuth.getInstance().getUid());
                 task_key = ref.push().getKey();
                 Task task = new Task(task_title.getText().toString(),task_desc.getText().toString(),task_time.getText().toString(),task_key);
                 ref.child(task_key).setValue(task);
-                Intent intent = new Intent(AddTaskActivity.this,TaskActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(AddTaskActivity.this,TaskActivity.class);
+                //startActivity(intent);
+                finish();
             }
         });
 
         Cancel_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AddTaskActivity.this,TaskActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(AddTaskActivity.this,TaskActivity.class);
+                //startActivity(intent);
+                finish();
             }
         });
     }
