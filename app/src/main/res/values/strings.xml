@@ -11,4 +11,20 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_activity_wonder">ScrollingActivity</string>
+    <string name="large_text">
+        "Why do we have rules in games?\n\n"
+        "What’s the importance of those rules?\n\n"
+        "Ever tried playing without those rules!\n\n"
+        "Suppose remove all the rules and try playing it. Imagine what happens? Won’t it be too chaotic?\n\n"
+        "Here’s an interesting activity.\n\n"
+        "Consider the game of Chess. Each player has 6 different pieces with pre-defined moves for each of them. You can remove any of the rule or modify it or you can entirely re-define your own set of rules and moves for each piece or you can just totally remove them.
+How does the game seem now?\n\n"
+        "Is it interesting now?\n"
+        "Or do you feel like not removing those rules because they seem reasonable to be a part of your game?\n\n"
+        "It’s just an example. You can try this with as many games as you like and have fun while exploring.\n\n"
+
+    </string>
+
 </resources>

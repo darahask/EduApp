@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.eduapp.Learn.LearnActivity;
 import com.example.eduapp.posts.CreateActivity;
 import com.example.eduapp.posts.adapters.MyPagerAdapter;
 import com.example.eduapp.study_material.ClassRoomPanel;
@@ -74,7 +75,8 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case R.id.nav_quiz:
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        //TODO intent here
+                        Intent learn = new Intent(getApplicationContext(),LearnActivity.class);
+                        startActivity(learn);
                         break;
                     default:
                         drawerLayout.closeDrawer(GravityCompat.START);
