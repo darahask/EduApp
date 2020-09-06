@@ -76,7 +76,6 @@
         android:layout_margin="16dp"
         app:elevation="4dp"
         android:tint="@android:color/white"
-        app:backgroundTint="@color/colorPrimaryDark"
         android:src="@drawable/ic_check"
         app:fabSize="normal"/>
 

@@ -1,9 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".posts.PostActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="256dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/selected_post_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"/>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".ScrollingActivity">
+
+        <LinearLayout
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginHorizontal="10dp"
+                android:id="@+id/selected_post_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="xdcfvvsdfds"
+                android:gravity="center"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/background_dark"/>
+
+            <TextView
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="12dp"
+                android:id="@+id/selected_post_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="xdcfvvsdfds"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="12dp"
+                android:id="@+id/selected_post_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="xdcfvvsdfds"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Answers"
+                android:textSize="18sp"
+                android:textColor="@android:color/background_dark"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginTop="12dp"
+                android:id="@+id/selected_post_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"/>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:onClick="OnClick"
+        android:id="@+id/post_answer_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_gravity="end|bottom"
+        app:srcCompat="@drawable/ic_plus_circle"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

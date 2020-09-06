@@ -72,7 +72,7 @@ public class ClassPostsFragment extends Fragment implements OnPostClickListener 
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if(task.isSuccessful()){
-                    String class_name = task.getResult().get("class").toString();
+                    String class_name = (String)task.getResult().get("class");
                     ff.collection("Posts").whereEqualTo("class",class_name).addSnapshotListener(new EventListener<QuerySnapshot>() {
                         @Override
                         public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
