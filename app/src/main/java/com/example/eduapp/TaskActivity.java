@@ -37,7 +37,7 @@ public class TaskActivity extends AppCompatActivity {
 
         btnplus = findViewById(R.id.plusButton);
 
-        RecyclerView list = findViewById(R.id.list);
+        final RecyclerView list = findViewById(R.id.list);
         list.setLayoutManager(new LinearLayoutManager(this));
         list.setAdapter(taskAdapter);
 
@@ -60,10 +60,31 @@ public class TaskActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {}
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Task task = dataSnapshot.getValue(Task.class);
+                String task_key = task.task_key;
+                for(int i = 0;i<taskList.size();i++){
+                    if(taskList.get(i).task_key==task_key){
+                        taskList.remove(i);
+                        taskList.add(i,task);
+                        break;
+                    }
+                }
+                taskAdapter.notifyDataSetChanged();
+            }
 
             @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {taskAdapter.notifyDataSetChanged();}
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+                Task task = dataSnapshot.getValue(Task.class);
+                String task_key = task.task_key;
+                for(int i = 0;i<taskList.size();i++){
+                    if(taskList.get(i).task_key==task_key){
+                        taskList.remove(i);
+                        break;
+                    }
+                }
+                taskAdapter.notifyDataSetChanged();
+            }
 
             @Override
             public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s){}
