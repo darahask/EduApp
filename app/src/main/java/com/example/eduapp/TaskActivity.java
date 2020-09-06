@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,11 +33,11 @@ public class TaskActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_task);
 
         btnplus = findViewById(R.id.plusButton);
 
-        RecyclerView list = (RecyclerView) findViewById(R.id.list);
+        RecyclerView list = findViewById(R.id.list);
         list.setLayoutManager(new LinearLayoutManager(this));
         list.setAdapter(taskAdapter);
 
@@ -48,7 +49,7 @@ public class TaskActivity extends AppCompatActivity {
             }
         });
 
-        ref = FirebaseDatabase.getInstance().getReference().child("tasks");
+        ref = FirebaseDatabase.getInstance().getReference().child("tasks").child(FirebaseAuth.getInstance().getUid());
         ref.addChildEventListener(new ChildEventListener(){
 
             @Override
