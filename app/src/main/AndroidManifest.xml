@@ -13,14 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TaskActivity"></activity>
+        <activity android:name=".TaskActivity"/>
         <activity android:name=".study_material.text_books.class6" />
-        <activity android:name=".posts.AnswerActivity"></activity>
         <activity android:name=".posts.AnswerActivity"
             android:parentActivityName=".posts.PostActivity"
             android:label="Reply"/>
         <activity android:name=".posts.PostActivity" />
-        <activity android:name=".study_material.text_books.class6" />
         <activity android:name=".study_material.text_books.class10" />
         <activity android:name=".study_material.text_books.class9" />
         <activity android:name=".study_material.text_books.class8" />
@@ -32,8 +30,6 @@
             android:parentActivityName=".HomeActivity" />
         <activity android:name=".EditDelActivity" />
         <activity android:name=".AddTask" />
-        <activity android:name=".HomeActivity" />
-            android:parentActivityName=".HomeActivity"/>
         <activity android:name=".HomeActivity"
             android:label=""/>
         <activity android:name=".RegisterActivity" />
