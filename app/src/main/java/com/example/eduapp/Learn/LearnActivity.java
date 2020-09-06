@@ -32,7 +32,7 @@ public class LearnActivity extends AppCompatActivity implements OnCardClickListe
 
         modelClassList.add(new ModelClass("https://miro.medium.com/max/875/1*OSO-o6jHDwg3m_7kWSlaFA.jpeg","Solve me","https://aplusclick.org/ThinkOutsideTheBox.htm"));
         modelClassList.add(new ModelClass("https://cdn.nabita.org/website-media/nabita.org/wp-content/uploads/2020/02/13173238/thinking-guy.jpg","Ever wondered",""));
-        modelClassList.add(new ModelClass("https://image.freepik.com/free-vector/thinking-outside-box-isometric-flat-vector-illustration_109064-68.jpg","Try these","https://www.funwithpuzzles.com/2011/08/lateral-thinking.html"));
+        modelClassList.add(new ModelClass("https://cdn2.hubspot.net/hub/145335/hubfs/10-outside-the-box-inbound-marketing-ideas.jpg?length=980&name=10-outside-the-box-inbound-marketing-ideas.jpg","Try these","https://www.funwithpuzzles.com/2011/08/lateral-thinking.html"));
 //        modelClassList.add(new ModelClass(R.drawable.ic_launcher_background,"user four","https://www.youtube.com/watch?v=AOPMlIIg_38&list=RDNgSFun7F8dI&index=4"));
 //        modelClassList.add(new ModelClass(R.drawable.ic_launcher_background,"user five","https://www.google.com"));
 
