@@ -149,7 +149,6 @@ public class CreateActivity extends AppCompatActivity implements AdapterView.OnI
                         }
                     }
                 });
-                ;
 
             }
         });
