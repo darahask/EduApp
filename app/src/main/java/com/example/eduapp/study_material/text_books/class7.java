@@ -59,7 +59,7 @@ public class class7 extends AppCompatActivity {
     }
 
     private void viewAllFiles() {
-        mRef = FirebaseDatabase.getInstance().getReference("seventh");
+        mRef = FirebaseDatabase.getInstance().getReference("classroom-material/seventh");
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
