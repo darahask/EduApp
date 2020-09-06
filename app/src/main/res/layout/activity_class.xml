@@ -11,11 +11,11 @@
     <ListView
         android:id="@+id/myListView"
         android:layout_width="360dp"
-        android:layout_height="464dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:background="@drawable/customshape"
-        android:dividerHeight="10.0sp"
+        android:dividerHeight="4sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"

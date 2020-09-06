@@ -25,13 +25,8 @@
             android:layout_marginBottom="18dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal" />
-
-        <View
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:background="#131E69"
-            android:layout_height="1dp" />
+            android:gravity="center_horizontal"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
@@ -95,7 +90,7 @@
 
             <EditText
                 android:id="@+id/login_password"
-                android:inputType="text"
+                android:inputType="textPassword"
                 android:background="@drawable/bgtaskinput"
                 android:paddingLeft="12dp"
                 android:textColorHint="#B5B5B5"
