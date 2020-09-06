@@ -63,10 +63,11 @@ public class TaskActivity extends AppCompatActivity {
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 Task task = dataSnapshot.getValue(Task.class);
                 String task_key = task.task_key;
+                System.out.println(task.task_time);
                 for(int i = 0;i<taskList.size();i++){
-                    if(taskList.get(i).task_key==task_key){
+                    if(taskList.get(i).task_key.equalsIgnoreCase(task_key)){
                         taskList.remove(i);
-                        taskList.add(i,task);
+                        taskList.add(task);
                         break;
                     }
                 }
@@ -78,7 +79,7 @@ public class TaskActivity extends AppCompatActivity {
                 Task task = dataSnapshot.getValue(Task.class);
                 String task_key = task.task_key;
                 for(int i = 0;i<taskList.size();i++){
-                    if(taskList.get(i).task_key==task_key){
+                    if(taskList.get(i).task_key.equalsIgnoreCase(task_key)){
                         taskList.remove(i);
                         break;
                     }
