@@ -37,6 +37,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_gravity="center_vertical"
         android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_weight="1"
@@ -52,7 +53,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="8dp"
             android:layout_marginRight="32dp"
-            android:text="default"
+            android:text=""
             android:textColor="#F63EA5"
             android:textSize="16sp"
             android:gravity="end" />

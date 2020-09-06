@@ -14,11 +14,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.eduapp.R;
 import com.example.eduapp.posts.CreateActivity;
 import com.example.eduapp.posts.adapters.MyPagerAdapter;
 import com.example.eduapp.study_material.ClassRoomPanel;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
@@ -70,10 +68,9 @@ public class HomeActivity extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         startActivity(new Intent(getApplicationContext(), ClassRoomPanel.class));
                         break;
-                        //TODO intent here
                     case R.id.nav_tasks:
                         drawerLayout.closeDrawer(GravityCompat.START);
-                        startActivity(new Intent(getApplicationContext(), TaskActivity.class));
+                     //   startActivity(new Intent(getApplicationContext(), TaskActivity.class));
                         break;
                     case R.id.nav_quiz:
                         drawerLayout.closeDrawer(GravityCompat.START);

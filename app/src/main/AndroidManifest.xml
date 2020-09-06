@@ -13,11 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TaskActivity"/>
+        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".EditDelActivity" />
+        <activity android:name=".AddTaskActivity" />
+        <activity android:name=".TaskActivity" />
         <activity android:name=".study_material.text_books.class6" />
-        <activity android:name=".posts.AnswerActivity"
-            android:parentActivityName=".posts.PostActivity"
-            android:label="Reply"/>
+        <activity
+            android:name=".posts.AnswerActivity"
+            android:label="Reply"
+            android:parentActivityName=".posts.PostActivity" />
         <activity android:name=".posts.PostActivity" />
         <activity android:name=".study_material.text_books.class10" />
         <activity android:name=".study_material.text_books.class9" />
@@ -28,12 +32,10 @@
             android:name=".posts.CreateActivity"
             android:label="Post"
             android:parentActivityName=".HomeActivity" />
-        <activity android:name=".EditDelActivity" />
-        <activity android:name=".AddTask" />
-        <activity android:name=".HomeActivity"
-            android:label=""/>
+        <activity
+            android:name=".HomeActivity"
+            android:label="" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -67,7 +67,7 @@ public class ClassPostsFragment extends Fragment implements OnPostClickListener 
     }
 
     private void startLoading() {
-        String uid = fa.getUid();
+        /*String uid = fa.getUid();
         ff.collection("Users").document(uid).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -114,7 +114,7 @@ public class ClassPostsFragment extends Fragment implements OnPostClickListener 
                     });
                 }
             }
-        });
+        });*/
     }
 
     @Override
