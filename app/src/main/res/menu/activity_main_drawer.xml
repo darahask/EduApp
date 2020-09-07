@@ -16,6 +16,10 @@
         <item
             android:id="@+id/nav_quiz"
             android:icon="@drawable/ic_question"
-            android:title="Quiz"/>
+            android:title="HOTs"/>
+        <item
+            android:id="@+id/nav_feed"
+            android:icon="@drawable/ic_feedback"
+            android:title="Feedback"/>
     </group>
 </menu>

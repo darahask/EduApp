@@ -13,15 +13,20 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.eduapp.Learn.LearnActivity;
 import com.example.eduapp.posts.adapters.MyPagerAdapter;
 import com.example.eduapp.posts.fragments.PostBottomSheet;
 import com.example.eduapp.study_material.ClassRoomPanel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -52,8 +57,6 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 PostBottomSheet postBottomSheet = new PostBottomSheet();
                 postBottomSheet.show(getSupportFragmentManager(),postBottomSheet.getTag());
-//                Intent i = new Intent(HomeActivity.this, CreateActivity.class);
-//                startActivity(i);
             }
         });
 
@@ -82,10 +85,34 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     default:
                         drawerLayout.closeDrawer(GravityCompat.START);
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.setType("*/*");
+                        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"eduappse@gmail.com"});
+                        intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback for EduApp");
+                        if (intent.resolveActivity(getPackageManager()) != null) {
+                            startActivity(intent);
+                        }
                 }
                 return true;
             }
         });
+
+        FirebaseFirestore.getInstance().collection("Users").document(FirebaseAuth.getInstance().getUid()).get().addOnCompleteListener(
+                new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        DocumentSnapshot doc = task.getResult();
+                        if (doc.get("name") != null) {
+                            TextView textView = findViewById(R.id.navheader_title);
+                            textView.setText((String)doc.get("name") + " ");
+                        }
+                        if (doc.get("class") != null) {
+                            TextView textView = findViewById(R.id.navheader_class);
+                            textView.setText((String)doc.get("class") + " ");
+                        }
+                    }
+                }
+        );
     }
 
     @Override
