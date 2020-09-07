@@ -37,7 +37,10 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
     @Override
     public void onBindViewHolder(@NonNull MyRecyclerAdapter.MyViewHolder holder, int position) {
         ImageView i = holder.imageView;
-        Glide.with(i.getContext()).load(dataList.get(position).get("imageurl").toString()).into(i);
+        String url = dataList.get(position).get("imageurl").toString();
+        if(!url.equalsIgnoreCase("")){
+            Glide.with(i.getContext()).load(url).into(i);
+        }
         holder.title.setText(dataList.get(position).get("title").toString());
         holder.class_name.setText(dataList.get(position).get("class").toString());
         String date = new SimpleDateFormat("dd/MM/yyyy").format(dataList.get(position).get("date"));

@@ -9,12 +9,12 @@
 
     <ListView
         android:id="@+id/listView"
-        android:layout_width="349dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:background="@drawable/customshape"
         android:backgroundTint="#FFFFFF"
-        android:dividerHeight="4sp"
+        android:dividerHeight="1sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.438"
@@ -23,14 +23,15 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="37dp"
         android:layout_marginBottom="5dp"
         android:text="Telangana and Andhra State Text Books"
         android:textColor="#FFFFFF"
-        android:textSize="22sp"
         android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/listView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"

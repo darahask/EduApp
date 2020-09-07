@@ -15,8 +15,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.eduapp.Learn.LearnActivity;
-import com.example.eduapp.posts.CreateActivity;
 import com.example.eduapp.posts.adapters.MyPagerAdapter;
+import com.example.eduapp.posts.fragments.PostBottomSheet;
 import com.example.eduapp.study_material.ClassRoomPanel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -50,8 +50,10 @@ public class HomeActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(HomeActivity.this, CreateActivity.class);
-                startActivity(i);
+                PostBottomSheet postBottomSheet = new PostBottomSheet();
+                postBottomSheet.show(getSupportFragmentManager(),postBottomSheet.getTag());
+//                Intent i = new Intent(HomeActivity.this, CreateActivity.class);
+//                startActivity(i);
             }
         });
 

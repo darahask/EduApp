@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.eduapp.R;
 import com.example.eduapp.posts.adapters.AnswerAdapter;
+import com.example.eduapp.posts.fragments.AnswerBottomSheet;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -132,9 +133,8 @@ public class PostActivity extends AppCompatActivity {
     }
 
     public void OnClick(View view){
-        Intent intent = new Intent(this,AnswerActivity.class);
-        intent.putExtra("postid",postId);
-        startActivity(intent);
+        AnswerBottomSheet answerBottomSheet = new AnswerBottomSheet(postId);
+        answerBottomSheet.show(getSupportFragmentManager(),answerBottomSheet.getTag());
     }
 
 

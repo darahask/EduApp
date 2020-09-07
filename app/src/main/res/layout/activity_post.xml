@@ -51,6 +51,7 @@
                 android:background="@drawable/text_background"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:padding="4dp"
                 android:textSize="26sp"
                 android:textStyle="bold"
                 android:textColor="@android:color/background_dark"/>
@@ -62,6 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/text_background"
+                android:padding="4dp"
                 android:textSize="18sp"
                 android:textColor="@android:color/background_dark"/>
 
@@ -72,6 +74,7 @@
                 android:id="@+id/selected_post_author"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="4dp"
                 android:textSize="14sp"
                 android:textColor="@android:color/background_dark"/>
 
