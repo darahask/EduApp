@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -58,7 +59,11 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                 email_id = emailID.getText().toString();
                 pass_word = password.getText().toString();
                 name_user = name.getText().toString();
-                if(email_id.isEmpty()){
+                if(name_user.isEmpty()){
+                    name.setError("Please enter your name");
+                    name.requestFocus();
+                }
+                else if(email_id.isEmpty()){
                     emailID.setError("Please enter email id");
                     emailID.requestFocus();
                 }
@@ -66,16 +71,17 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                     password.setError("Please enter password");
                     password.requestFocus();
                 }
-                else if(name_user.isEmpty()){
-                    name.setError("Please enter name");
-                    name.requestFocus();
-                }
                 else{
                     fba.createUserWithEmailAndPassword(email_id,pass_word).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(!task.isSuccessful()){
-                                Toast.makeText(RegisterActivity.this,"sign up unsuccessful, try again",Toast.LENGTH_SHORT).show();
+                                if(!Patterns.EMAIL_ADDRESS.matcher(email_id).matches()) {
+                                    Toast.makeText(RegisterActivity.this, "Please enter a valid Email id", Toast.LENGTH_SHORT).show();
+                                }
+                                else{
+                                    Toast.makeText(RegisterActivity.this, "sign up unsuccessful, try again", Toast.LENGTH_SHORT).show();
+                                }
                             }
                             else{
                                 startActivity(new Intent(RegisterActivity.this,HomeActivity.class));

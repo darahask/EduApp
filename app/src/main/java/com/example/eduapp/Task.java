@@ -3,8 +3,7 @@ package com.example.eduapp;
 public class Task {
     String task_title, task_desc, task_time, task_key;
 
-
-    public Task() {};
+    public Task() {}
 
     public Task(String task_title, String task_desc, String task_time,String task_key) {
         this.task_title = task_title;

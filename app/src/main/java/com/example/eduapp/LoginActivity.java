@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.eduapp.R;
@@ -49,15 +50,12 @@ public class LoginActivity<wordtoSpan> extends AppCompatActivity {
                     password.setError("Please enter password");
                     password.requestFocus();
                 }
-                else if(email_id.isEmpty() && pass_word.isEmpty()){
-                    Toast.makeText(LoginActivity.this,"Fields are empty!",Toast.LENGTH_SHORT).show();
-                }
                 else{
                     fba.signInWithEmailAndPassword(email_id,pass_word).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(!task.isSuccessful()){
-                                Toast.makeText(LoginActivity.this,"Error, plaese try again!",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this,"Invalid Email Id or password, try again!",Toast.LENGTH_SHORT).show();
                             }
                             else{
                                 Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
