@@ -46,7 +46,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="Find Out..."
+                android:layout_marginLeft="8dp"
                 android:textColor="#F13D7A"
                 android:textSize="30sp"
                 android:textStyle="bold"/>
@@ -55,7 +56,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/text_margin"
-                android:text="@string/large_text"
+                android:text="@string/large_text2"
                 android:textSize="20sp"/>
 
         </LinearLayout>

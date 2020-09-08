@@ -7,7 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="16dp"
-    android:layout_marginTop="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
     android:layout_marginRight="16dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="6dp">
@@ -15,7 +16,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#62CCFB">
+        android:background="#E8E2A9">
 
         <ImageView
             android:id="@+id/item_image"

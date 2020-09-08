@@ -39,11 +39,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Viewholder> {
         return new Viewholder(view,cardClick);
     }
 
-    private void openWebPage(Context context, String s) {
-        Uri uri = Uri.parse(s);
-        context.startActivity(new Intent(Intent.ACTION_VIEW,uri));
-    }
-
     @Override
     public void onBindViewHolder(@NonNull Viewholder viewholder, int position) {
         String resource = modelClassList.get(position).getImageResource();

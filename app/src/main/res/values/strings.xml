@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">EduApp</string>
     <string-array name="classes">
         <item>Class-6</item>
@@ -13,8 +13,15 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="title_activity_wonder">ScrollingActivity</string>
-    <string name="large_text">
+    <string name="large_text1">
 "\u2022 Why do we have rules in games?\n\u2022 What’s the importance of those rules?\n\nEver tried playing without those rules!\n\nSuppose remove all the rules and try playing it. Imagine what happens? Won’t it be too chaotic?\n\nHere’s an interesting activity.\n\nConsider the game of Chess. Each player has 6 different pieces with pre-defined moves for each of them. You can remove any of the rule or modify it or you can entirely re-define your own set of rules and moves for each piece or you can just totally remove them. How does the game seem now?\n\nIs it interesting now?\nOr do you feel like not removing those rules because they seem reasonable to be a part of your game?\n\nIt’s just an example. You can try this with as many games as you like and have fun exploring.\n\n"
     </string>
+
+    <string name="large_text2" tools:ignore="DuplicateDefinition">
+"Research says that there are eight types of intelligence.\n\n1. Logical-mathematical intelligence\n2. Linguistic intelligence\n3. Spatial Intelligence\n4. Musical Intelligence\n5. Bodily-kinesthetic Intelligence\n6. Intrapersonal Intelligence\n7. Interpersonal Intelligence\n8. Naturalistic intelligence\n\nGo on and search for what each of these means and find out what talent you have.\n\nOr maybe you can try to become develop your skills and become rather good at everything. Have fun exploring."
+    </string>
+
+    <string name="title_activity_first">ScrollingActivity</string>
+    <string name="action_settings">Settings</string>
 
 </resources>
