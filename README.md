@@ -26,7 +26,7 @@ Things you can do with this app:
 
 * Doubts Forum: Post your doubts and get them answered here.
 * Materials: A quick access to your textbooks and materials.
-* ToDo tasks: Make the best out of your day by making a good todo list and striking off the completed tasks gloriously.
+* ToDo list: Make the best out of your day by making a good todo list and striking off the completed tasks gloriously.
 * HOTs: Bored but want to use your time efficiently? check out some puzzles and brain teasers here.
 * Latest educational news: Don't miss any important news! check them out here.
 
