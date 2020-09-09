@@ -42,7 +42,7 @@ Things you can do with this app:
 Please feel free to drop us your valuable feedback via [Email](mailto:eduappse@gmail.com?subject=Feedback) or [File an issue](https://github.com/darakask/EduApp/issues/new).
 
 # Contributors
-Here are the four musketeers
+Here are the four musketeers:
 
 - [Darahas Kopparapu](https://github.com/darahask)
 - [Vaishnavi](https://github.com/darahask)
@@ -52,7 +52,7 @@ Here are the four musketeers
 
 # Installation
 - Download the Repo or Clone it
-- Add google-services.json file in app folder
+- Add google-services.json file in app folder (if you are a developer and want to use your own firebase)
 - Open the downloaded Repo in Android Studio
 - That's all you are good to go!
 
@@ -62,5 +62,5 @@ Here are the four musketeers
 * Improving the UI Flow and adding more HOTs and materials
 * Chat rooms, following a user mechanism
 * Guidance and counselling feature
-* Adding a feature where people can find Tutors nearby.
+* Adding a feature where users can find Tutors nearby.
 
