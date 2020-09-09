@@ -39,10 +39,10 @@ Feel free to send feedback via [Email](mailto:lunde@adobe.com?subject=Feedback) 
 # Contributors
 Here are some awesome contributors:
 
-[Darahas Kopparapu](https://github.com/darahask)
-[Vaishnavi](https://github.com/darahask)
-[Bhavana](https://github.com/darahask)
-[Surya Sai](https://github.com/darahask)
+- [Darahas Kopparapu](https://github.com/darahask)
+- [Vaishnavi](https://github.com/darahask)
+- [Bhavana](https://github.com/darahask)
+- [Surya Sai](https://github.com/darahask)
 
 
 # Installation
