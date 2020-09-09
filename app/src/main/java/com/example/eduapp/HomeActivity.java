@@ -17,6 +17,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.eduapp.Learn.LearnActivity;
+import com.example.eduapp.blog.BlogActivity;
 import com.example.eduapp.posts.adapters.MyPagerAdapter;
 import com.example.eduapp.posts.fragments.PostBottomSheet;
 import com.example.eduapp.study_material.ClassRoomPanel;
@@ -83,6 +84,11 @@ public class HomeActivity extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         Intent learn = new Intent(getApplicationContext(),LearnActivity.class);
                         startActivity(learn);
+                        break;
+                    case R.id.nav_blog:
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        Intent blog = new Intent(getApplicationContext(), BlogActivity.class);
+                        startActivity(blog);
                         break;
                     default:
                         drawerLayout.closeDrawer(GravityCompat.START);

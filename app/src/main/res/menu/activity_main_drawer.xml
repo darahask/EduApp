@@ -18,6 +18,10 @@
             android:icon="@drawable/ic_question"
             android:title="HOTs"/>
         <item
+            android:id="@+id/nav_blog"
+            android:icon="@drawable/ic_newspaper"
+            android:title="Blog"/>
+        <item
             android:id="@+id/nav_feed"
             android:icon="@drawable/ic_feedback"
             android:title="Feedback"/>
