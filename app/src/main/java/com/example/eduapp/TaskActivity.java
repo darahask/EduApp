@@ -67,7 +67,7 @@ public class TaskActivity extends AppCompatActivity {
                 for(int i = 0;i<taskList.size();i++){
                     if(taskList.get(i).task_key.equalsIgnoreCase(task_key)){
                         taskList.remove(i);
-                        taskList.add(task);
+                        taskList.add(i,task);
                         break;
                     }
                 }
