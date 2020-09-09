@@ -19,7 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity<wordtoSpan> extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     FirebaseAuth fba;
     EditText emailID;
@@ -27,6 +27,7 @@ public class LoginActivity<wordtoSpan> extends AppCompatActivity {
     String email_id;
     String pass_word;
     Button login;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class LoginActivity<wordtoSpan> extends AppCompatActivity {
         emailID = (EditText) findViewById(R.id.login_email);
         password = (EditText) findViewById(R.id.login_password);
         login = (Button) findViewById(R.id.login);
+        progressBar = findViewById(R.id.login_progress);
 
         login.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -51,6 +53,7 @@ public class LoginActivity<wordtoSpan> extends AppCompatActivity {
                     password.requestFocus();
                 }
                 else{
+                    progressBar.setVisibility(View.VISIBLE);
                     fba.signInWithEmailAndPassword(email_id,pass_word).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -58,6 +61,7 @@ public class LoginActivity<wordtoSpan> extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this,"Invalid Email Id or password, try again!",Toast.LENGTH_SHORT).show();
                             }
                             else{
+                                progressBar.setVisibility(View.GONE);
                                 Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
                                 startActivity(intent);
                                 finish();

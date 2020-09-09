@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -35,6 +36,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
     Button signup;
     Spinner spinner;
     String class_name;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+        progressBar = findViewById(R.id.register_progress);
 
         signup.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -72,6 +75,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                     password.requestFocus();
                 }
                 else{
+                    progressBar.setVisibility(View.VISIBLE);
                     fba.createUserWithEmailAndPassword(email_id,pass_word).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -84,6 +88,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                                 }
                             }
                             else{
+                                progressBar.setVisibility(View.GONE);
                                 startActivity(new Intent(RegisterActivity.this,HomeActivity.class));
                                 Map<String, Object> city = new HashMap<>();
                                 city.put("name", name_user);

@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -46,7 +47,7 @@ public class AnswerBottomSheet extends BottomSheetDialogFragment {
     TextInputEditText desc;
     Uri imageUri;
     String postid;
-
+    ProgressBar progressBar;
     public AnswerBottomSheet(String postid) {
         this.postid = postid;
     }

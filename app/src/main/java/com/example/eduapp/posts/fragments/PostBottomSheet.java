@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -54,12 +55,13 @@ public class PostBottomSheet extends BottomSheetDialogFragment implements Adapte
     Spinner spinner;
     String class_name;
     Uri imageUri;
+    ProgressBar progressBar;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_create,container,false);
-
+        progressBar = view.findViewById(R.id.cre_prog);
         fs = FirebaseStorage.getInstance().getReference().child("Images");
         fa = FirebaseAuth.getInstance();
         title = view.findViewById(R.id.post_title);
@@ -91,6 +93,7 @@ public class PostBottomSheet extends BottomSheetDialogFragment implements Adapte
                     desc.setError("required");
                     desc.requestFocus();
                 }else {
+                    progressBar.setVisibility(View.VISIBLE);
                     final StorageReference sr = fs.child(UUID.randomUUID().toString());
                     Toast.makeText(getContext(),"Upload Started",Toast.LENGTH_SHORT).show();
                     final Map<String,Object> map = new HashMap<>();
@@ -112,6 +115,7 @@ public class PostBottomSheet extends BottomSheetDialogFragment implements Adapte
                                 }
                                 map.put("time", System.currentTimeMillis());
                                 if(imageUri == null){
+                                    progressBar.setVisibility(View.GONE);
                                     map.put("imageurl","");
                                     ff.collection("Posts").add(map);
                                     Toast.makeText(getContext(),"Uploaded",Toast.LENGTH_SHORT).show();
@@ -133,6 +137,7 @@ public class PostBottomSheet extends BottomSheetDialogFragment implements Adapte
                                                 map.put("imageurl",task.getResult().toString());
                                                 ff.collection("Posts").add(map);
                                                 Toast.makeText(getContext(),"Uploaded",Toast.LENGTH_SHORT).show();
+                                                progressBar.setVisibility(View.GONE);
                                                 dismiss();
                                             }
                                         }
