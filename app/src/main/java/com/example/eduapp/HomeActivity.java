@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -93,12 +94,14 @@ public class HomeActivity extends AppCompatActivity {
                     default:
                         drawerLayout.closeDrawer(GravityCompat.START);
                         Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.setData(Uri.parse("mailto:"));
                         intent.setType("*/*");
                         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"eduappse@gmail.com"});
                         intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback for EduApp");
                         if (intent.resolveActivity(getPackageManager()) != null) {
                             startActivity(intent);
                         }
+
                 }
                 return true;
             }

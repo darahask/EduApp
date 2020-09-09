@@ -48,7 +48,8 @@
                 android:layout_marginLeft="8dp"
                 android:textColor="#F13D7A"
                 android:textSize="30sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,RtlHardcoded" />
 
             <TextView
                 android:layout_width="wrap_content"

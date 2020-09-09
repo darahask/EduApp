@@ -27,7 +27,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:scaleType="fitXY"/>
+                android:scaleType="fitXY"
+                tools:ignore="ContentDescription" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
@@ -50,7 +51,8 @@
                 android:layout_marginLeft="8dp"
                 android:textColor="#F13D7A"
                 android:textSize="30sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,RtlHardcoded" />
 
             <TextView
                 android:layout_width="wrap_content"
