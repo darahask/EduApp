@@ -2,6 +2,7 @@ package com.example.eduapp.blog;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,7 +12,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toolbar;
 
 import com.example.eduapp.HomeActivity;
 import com.example.eduapp.Learn.LearnActivity;
@@ -38,17 +38,9 @@ public class BlogActivity extends AppCompatActivity implements OnBlogClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_blog);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
-        setActionBar(toolbar);
-
-        ImageButton imageButton = (ImageButton) findViewById(R.id.back_button);
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(BlogActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }
-        });
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recyclerView = findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
