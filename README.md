@@ -37,9 +37,12 @@ Things you can do with this app:
 * Code sharing: GitHub
 
 # Screen Shots
+|<img src="screenshots/1.jpg" width="30%">|<img src="screenshots/2.jpg" width="30%">|<img src="screenshots/3.jpg" width="30%">|
+|<img src="screenshots/4.jpg" width="30%">|<img src="screenshots/5.jpg" width="30%">|<img src="screenshots/6.jpeg" width="30%">|
+|<img src="screenshots/7.jpeg" width="30%">|
 
 # Feedback
-Please feel free to drop us your valuable feedback via [Email](mailto:eduappse@gmail.com?subject=Feedback) or [File an issue](https://github.com/darakask/EduApp/issues/new).
+Please feel free to drop us your valuable feedback via email: eduappse@gmail.com or [File an issue](https://github.com/darakask/EduApp/issues/new).
 
 # Contributors
 Here are the four musketeers:
@@ -61,6 +64,5 @@ Here are the four musketeers:
 * Notifications and remainders
 * Improving the UI Flow and adding more HOTs and materials
 * Chat rooms, following a user mechanism
-* Guidance and counselling feature
 * Adding a feature where users can find Tutors nearby.
 
