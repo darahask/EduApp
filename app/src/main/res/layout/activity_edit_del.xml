@@ -27,11 +27,6 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal" />
 
-        <View
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:background="#131E69"
-            android:layout_height="1dp" />
 
     </LinearLayout>
 
@@ -160,7 +155,7 @@
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="14dp"
-        android:text="Done"
+        android:text="Task Completed"
         android:onClick="delete"
         android:textColor="#AFAFAF"
         android:textAllCaps="false"
