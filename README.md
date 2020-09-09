@@ -13,6 +13,7 @@
 
 - [Introduction](#introduction)
 - [Features](#features)
+- [Technologies](#technologies)
 - [Screen Shots](#screen-shots)
 - [Feedback](#feedback)
 - [Contributors](#contributors)
@@ -31,10 +32,12 @@ Things you can do in this app:
 * HOTs
 * Latest Educational News
 
+# Technologies
+
 # Screen Shots
 
 # Feedback
-Feel free to send feedback via [Email](mailto:lunde@adobe.com?subject=Feedback) or [File an issue](https://github.com/darakask/EduApp/issues/new), we are always welcome to feedback.
+Feel free to send feedback via [Email](mailto:eduappse@gmail.com?subject=Feedback) or [File an issue](https://github.com/darakask/EduApp/issues/new), we are always welcome to feedback.
 
 # Contributors
 Here are some awesome contributors:
