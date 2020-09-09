@@ -45,7 +45,7 @@ Please feel free to drop us your valuable feedback via [Email](mailto:eduappse@g
 Here are the four musketeers:
 
 - [Darahas Kopparapu](https://github.com/darahask)
-- [Vaishnavi](https://github.com/Cherry1181)
+- [R.L.Vaishnavi](https://github.com/Cherry1181)
 - [Sapparapu Bhavana](https://github.com/SBhavanasp)
 - [Surya Sai](https://github.com/darahask)
 
