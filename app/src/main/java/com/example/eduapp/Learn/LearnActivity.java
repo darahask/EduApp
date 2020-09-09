@@ -2,6 +2,7 @@ package com.example.eduapp.Learn;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,7 +12,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.example.eduapp.HomeActivity;
 import com.example.eduapp.R;
@@ -30,17 +30,10 @@ public class LearnActivity extends AppCompatActivity implements OnCardClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
-        setActionBar(toolbar);
+        Toolbar toolbar = findViewById(R.id.tool_bar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        ImageButton imageButton = (ImageButton) findViewById(R.id.back_button);
-        imageButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LearnActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }
-        });
 
         recyclerView = findViewById(R.id.recycler_view);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
