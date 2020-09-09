@@ -80,6 +80,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(!task.isSuccessful()){
+                                progressBar.setVisibility(View.GONE);
                                 if(!Patterns.EMAIL_ADDRESS.matcher(email_id).matches()) {
                                     Toast.makeText(RegisterActivity.this, "Please enter a valid Email id", Toast.LENGTH_SHORT).show();
                                 }
