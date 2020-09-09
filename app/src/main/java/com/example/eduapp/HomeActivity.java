@@ -94,7 +94,6 @@ public class HomeActivity extends AppCompatActivity {
                     default:
                         drawerLayout.closeDrawer(GravityCompat.START);
                         Intent intent = new Intent(Intent.ACTION_SEND);
-                        intent.setData(Uri.parse("mailto:"));
                         intent.setType("*/*");
                         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"eduappse@gmail.com"});
                         intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback for EduApp");
