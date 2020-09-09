@@ -5,9 +5,7 @@
   </a>
 </p>
 
-<p align="center" >
- <h3 align="center">Makes Learning Easy.</h3>
-</p>
+<p align="center"><h3 align="center"> Makes Learning Easy.</h3>
 
 ## Table of Contents
 
@@ -21,30 +19,34 @@
 - [Upcoming features](#upcoming-features)
 
 # Introduction
-This App is mainly made to clarify doubts of students of classes (6 - 12), and puts forward a partform where everyone can freely ask doubts and anyone can answer them, also it encourages students to think out of the box through HOTs feature in our app.
+This App is mainly made to clarify doubts of students of classes (6 - 12), and puts forward a platform where everyone can freely ask doubts and anyone can answer them.
 
 # Features
-Things you can do in this app:
+Things you can do with this app:
 
-* Post Forum
-* Materials
-* ToDo tasks
-* HOTs
-* Latest Educational News
+* Doubts Forum: Post your doubts and get them answered here.
+* Materials: A quick access to your textbooks and materials.
+* ToDo tasks: Make the best out of your day by making a good todo list and striking off the completed tasks gloriously.
+* HOTs: Bored but want to use your time efficiently? check out some puzzles and brain teasers here.
+* Latest educational news: Don't miss any important news! check them out here.
 
 # Technologies
+
+* Frontend: Android Studio with Java
+* Backend: Firebase
+* Code sharing: GitHub
 
 # Screen Shots
 
 # Feedback
-Feel free to send feedback via [Email](mailto:eduappse@gmail.com?subject=Feedback) or [File an issue](https://github.com/darakask/EduApp/issues/new), we are always welcome to feedback.
+Please feel free to drop us your valuable feedback via [Email](mailto:eduappse@gmail.com?subject=Feedback) or [File an issue](https://github.com/darakask/EduApp/issues/new).
 
 # Contributors
-Here are some awesome contributors:
+Here are the four musketeers
 
 - [Darahas Kopparapu](https://github.com/darahask)
 - [Vaishnavi](https://github.com/darahask)
-- [Bhavana](https://github.com/darahask)
+- [Sapparapu Bhavana](https://github.com/SBhavanasp)
 - [Surya Sai](https://github.com/darahask)
 
 
@@ -52,12 +54,13 @@ Here are some awesome contributors:
 - Download the Repo or Clone it
 - Add google-services.json file in app folder
 - Open the downloaded Repo in Android Studio
-- Thats all you are good to go.
+- That's all you are good to go!
 
 # Upcoming Features
 
-* Notifications
-* Improving the Ui Flow and adding more HOTs and materials
-* Chatrooms, Following a User Mechanism
+* Notifications and remainders
+* Improving the UI Flow and adding more HOTs and materials
+* Chat rooms, following a user mechanism
+* Guidance and counselling feature
 * Adding a feature where people can find Tutors nearby.
 
