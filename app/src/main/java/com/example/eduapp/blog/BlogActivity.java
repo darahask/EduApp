@@ -36,7 +36,7 @@ public class BlogActivity extends AppCompatActivity implements OnBlogClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_learn);
+        setContentView(R.layout.activity_blog);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setActionBar(toolbar);
